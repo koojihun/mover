@@ -1,6 +1,7 @@
 package com.newSystem.Bitcoin;
 
 import com.newSystem.Main;
+import com.newSystem.Settings;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -30,16 +31,18 @@ public class BitcoinServer extends Thread {
             Map <String,String> params = queryToMap(httpExchange.getRequestURI().getQuery());
             String method = params.get("method");
             String pid;
-            String account;
             String address;
-            String ip;
-            if (Integer.valueOf(method) == 1) {
-                // method:1 --> send_to_address.
-                address = params.get("address");
-                pid = params.get("pid");
-                response.append(Main.bitcoinJSONRPCClient.send_to_address(address, pid));
+            String companyName;
+            if (Integer.valueOf(method) == 4) {
+                // method:4 --> send_to_address request (redirected from gener's server).
+                companyName = params.get("companyName");
+                if (companyName.equals(Settings.companyName)) {
+                    address = params.get("address");
+                    pid = params.get("pid");
+                    response.append(Main.bitcoinJSONRPCClient.send_to_address(address, pid));
+                    writeResponse(httpExchange, response.toString());
+                }
             }
-            writeResponse(httpExchange, response.toString());
         }
     }
     // url 뒤 parameter들을 파싱 하기 위한 함수들. (ex. ip주소:port/?method=1&address=~~~&pid=~~)

@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         UIManager.setLookAndFeel(new WebLookAndFeel());
         new Settings();
+        sendCompanyNameAndIp();
 
         MainFrame mainFrame = new MainFrame();
 
@@ -28,7 +29,6 @@ public class Main {
         } catch (MalformedURLException e) {
             System.err.println("BitcoinJSONRPCClient Constructor Error");
         }
-        sendCompanyNameAndIp();
     }
 
     private static void sendCompanyNameAndIp() {

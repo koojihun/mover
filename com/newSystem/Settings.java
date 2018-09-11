@@ -11,6 +11,7 @@ public class Settings {
     static private String rpcUser;
     static private String rpcPassword;
     static public String companyName;
+    static public String companyAddress;
     static public String directorName;
     static public String directorEmail;
     static public String directorPhone;

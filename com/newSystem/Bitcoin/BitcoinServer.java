@@ -31,15 +31,15 @@ public class BitcoinServer extends Thread {
             Map <String,String> params = queryToMap(httpExchange.getRequestURI().getQuery());
             String method = params.get("method");
             String pid;
-            String companyAddress;
+            String recieverAddress;
             String companyName;
             if (Integer.valueOf(method) == 4) {
                 // method:4 --> send_to_address request (redirected from gener's server).
                 companyName = params.get("companyName");
                 if (companyName.equals(Settings.companyName)) {
-                    companyAddress = params.get("address");
+                    recieverAddress = params.get("recieverAddress");
                     pid = params.get("pid");
-                    response.append(Main.bitcoinJSONRPCClient.send_to_address(companyAddress, pid));
+                    response.append(Main.bitcoinJSONRPCClient.send_to_address(recieverAddress, pid));
                     writeResponse(httpExchange, response.toString());
                 }
             }

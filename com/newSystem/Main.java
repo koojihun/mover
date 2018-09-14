@@ -52,6 +52,6 @@ public class Main {
         ArrayList<String> vals = new ArrayList<>();
         keys.add("companyName");
         vals.add(Settings.companyName);
-        Request.send("3", keys, vals);
+        Request.send("2", keys, vals);
     }
 }

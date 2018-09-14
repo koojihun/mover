@@ -87,7 +87,7 @@ public class SignUpForm extends JDialog {
             vals.add(DirectorName);
             vals.add(DirectorEmail);
             vals.add(DirectorPhone);
-            Request.send("5", keys, vals);
+            Request.send("4", keys, vals);
             ///////////////////////////////////////////////////////
             Settings.signUpFinished = true;
             SwingUtilities.getWindowAncestor(clicked).dispose();

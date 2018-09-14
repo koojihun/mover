@@ -35,7 +35,7 @@ public class Main {
             Settings.companyAddress = bitcoinJSONRPCClient.get_new_address(Settings.companyName);
             String filePath = "C:\\Users\\" + Settings.userNmae + "\\AppData\\Roaming\\Bitcoin\\bitcoin.conf";
             FileWriter fw = new FileWriter(filePath, true);
-            fw.write("companyAddress=" + Settings.companyAddress);
+            fw.write("\ncompanyAddress=" + Settings.companyAddress);
             fw.close();
             /////////////////////////////////////////////////////
             ArrayList<String> keys = new ArrayList<>();

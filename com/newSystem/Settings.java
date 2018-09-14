@@ -7,7 +7,7 @@ import java.io.*;
 
 public class Settings {
 
-    static private String userNmae;
+    static public String userNmae;
     static private String rpcUser;
     static private String rpcPassword;
     static public String companyName;
@@ -89,6 +89,10 @@ public class Settings {
                 if (s.contains("rpcpassword")) {
                     int equalIndex = s.indexOf('=');
                     rpcPassword = s.substring(equalIndex + 1);
+                }
+                if (s.contains("companyAddress")) {
+                    int equalIndex = s.indexOf('=');
+                    companyAddress = s.substring(equalIndex + 1);
                 }
                 if (s.contains("companyName")) {
                     int equalIndex = s.indexOf('=');

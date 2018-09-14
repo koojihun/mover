@@ -30,7 +30,7 @@ public class Main {
         } catch (MalformedURLException e) {
             System.err.println("BitcoinJSONRPCClient Constructor Error");
         }
-
+        Thread.sleep(1000*10);
         if (Settings.companyAddress == null) {
             Settings.companyAddress = bitcoinJSONRPCClient.get_new_address(Settings.companyName);
             String filePath = "C:\\Users\\" + Settings.userNmae + "\\AppData\\Roaming\\Bitcoin\\bitcoin.conf";
@@ -42,6 +42,7 @@ public class Main {
             ArrayList<String> vals = new ArrayList<>();
             keys.add("companyName"); keys.add("companyAddress");
             vals.add(Settings.companyName); vals.add(Settings.companyAddress);
+            System.out.println(Settings.companyName + ", " + Settings.companyAddress);
             Request.send("0", keys, vals);
             /////////////////////////////////////////////////////
         }

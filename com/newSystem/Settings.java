@@ -234,6 +234,7 @@ public class Settings {
             fw.write("directorEmail=" + directorEmail);
             fw.newLine();
             fw.write("directorPhone=" + directorPhone);
+            fw.newLine();
             fw.flush();
             // 객체 닫기
             fw.close();

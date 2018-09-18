@@ -209,7 +209,7 @@ public class Settings {
     }
     private void makeConfFile() {
         rpcUser = userNmae;
-        rpcPassword = Settings.companyName;
+        rpcPassword = "temppassword";
         String fileName = "C:\\Users\\" + userNmae + "\\AppData\\Roaming\\Bitcoin\\bitcoin.conf";
         try{
             BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, false));

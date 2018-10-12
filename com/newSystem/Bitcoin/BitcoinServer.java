@@ -37,7 +37,7 @@ public class BitcoinServer extends Thread {
                 // method:4 --> send_to_address request (redirected from gener's server).
                 companyName = params.get("companyName");
                 if (companyName.equals(Settings.companyName)) {
-                    recieverAddress = params.get("recieverAddress");
+                    recieverAddress = params.get("receiverAddress");
                     pid = params.get("pid");
                     response.append(Main.bitcoinJSONRPCClient.send_to_address(recieverAddress, pid));
                     writeResponse(httpExchange, response.toString());
